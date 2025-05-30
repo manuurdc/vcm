@@ -353,3 +353,10 @@ footer {
 .submit-btn:hover {
     background-color: #7b5cb6;
 }
+
+gmedia (nax-width: 680px) {
+#menu dav {
+    padding: 8px 5px;
+    font-size: 0.9em;
+    }
+}
