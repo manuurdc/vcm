@@ -353,14 +353,3 @@ footer {
 .submit-btn:hover {
     background-color: #7b5cb6;
 }
-#esquerda video, #direita video {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-}
-
-/* Para manter a proporção dos vídeos */
-video {
-    max-width: 100%;
-    height: auto;
-}
