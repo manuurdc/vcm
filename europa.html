@@ -14,6 +14,14 @@
   />
 
 <style>
+    :root {
+  --roxo-claro: #b185db;
+  --roxo-hover: #a76bdb;
+  --azul-claro: #add8e6;
+  --cinza: #f9f9f9;
+  --cinza-escuro: #ccc;
+  --branco: #ffffff;
+}
   /* Reset & Base */
   body {
     font-family: 'Poppins', sans-serif;
@@ -195,6 +203,57 @@
   border-radius: 2px;
   margin-top: 8px;
 }
+.topico-estilizado {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.topico-estilizado h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--roxo-claro);
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.topico-estilizado h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: var(--roxo-claro); /* Cor roxa clara */
+  margin: 0 auto;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+.topico-estilizado {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.topico-estilizado h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--roxo-claro); /* Título na cor roxo claro */
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.topico-estilizado h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: var(--roxo-claro); /* Linha inferior roxo claro */
+  margin: 0 auto;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
 
 </style>
 
