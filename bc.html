@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Relato da viagem da Manu para Balneário Camboriú com o terceirão" />
   <title>Viagem para BC | Viajando com a Manu</title>
+  <link rel="stylesheet" href="css/style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,159 +15,191 @@
   />
 
   <style>
- body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: #f5f2fb; /* fundo levemente lilás */
-  color: #333;
-}
-header {
-  background: linear-gradient(to right, #d9c7f9, #c2d1f0); /* gradiente roxo claro */
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-.menu-toggle {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: #ebe6fb; /* tom lilás suave */
-  padding: 0.5rem;
-}
-.menu-item {
-  margin: 0.5rem 1rem;
-  text-decoration: none;
-  color: #a892c6; /* roxo claro principal */
-  font-weight: 600;
-}
-.menu-item.active {
-  border-bottom: 2px solid #a892c6;
-}
-main {
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #a892c6;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.trip-text p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-figure.image-full img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
-}
-figure.image-full figcaption {
-  font-size: 0.9rem;
-  color: #7b729a; /* tom lilás escuro para legenda */
-  text-align: center;
-  margin-bottom: 2rem;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f5f2fb; /* fundo levemente lilás */
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #d9c7f9, #c2d1f0); /* gradiente roxo claro */
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #ebe6fb; /* tom lilás suave */
+      padding: 0.5rem;
+    }
+    .menu-item {
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: #a892c6; /* roxo claro principal */
+      font-weight: 600;
+    }
+    .menu-item.active {
+      border-bottom: 2px solid #a892c6;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #a892c6;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .trip-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    figure.image-full img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+    figure.image-full figcaption {
+      font-size: 0.9rem;
+      color: #7b729a; /* tom lilás escuro para legenda */
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-/* CARROSSEL */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
+    /* CARROSSEL */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  gap: 1rem;
-  padding: 1rem;
-}
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 1rem;
+      padding: 1rem;
+    }
 
-.carousel-track img {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  object-fit: cover;
-  user-select: none;
-  pointer-events: none;
-}
+    .carousel-track img {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(168, 146, 198, 0.8); /* roxo claro translúcido */
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.3rem 0.7rem;
-  cursor: pointer;
-  border-radius: 50%;
-  user-select: none;
-  transition: background-color 0.3s ease;
-  z-index: 10;
-}
-.carousel-btn:hover {
-  background-color: #a892c6; /* roxo claro sólido */
-}
-.carousel-btn.left {
-  left: 10px;
-}
-.carousel-btn.right {
-  right: 10px;
-}
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(168, 146, 198, 0.8); /* roxo claro translúcido */
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+    .carousel-btn:hover {
+      background-color: #a892c6; /* roxo claro sólido */
+    }
+    .carousel-btn.left {
+      left: 10px;
+    }
+    .carousel-btn.right {
+      right: 10px;
+    }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  .carousel-track img {
-    max-width: 200px;
-  }
-}
-.topico-estilizado {
-  text-align: center;
-  margin: 40px 0;
-  position: relative;
-}
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .carousel-track img {
+        max-width: 200px;
+      }
+    }
+    .topico-estilizado {
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+    }
 
-.topico-estilizado h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-  display: inline-block;
-  padding-bottom: 10px;
-  position: relative;
-}
+    .topico-estilizado h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      display: inline-block;
+      padding-bottom: 10px;
+      position: relative;
+    }
 
-.topico-estilizado h2::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 4px;
-  background-color: #f8b500; /* Cor da linha inferior */
-  margin: 0 auto;
-  border-radius: 2px;
-  margin-top: 8px;
-}
+    .topico-estilizado h2::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 4px;
+      background-color: #f8b500; /* Cor da linha inferior */
+      margin: 0 auto;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
 
+    /* NOVO ESTILO PARA LINKS DO FOOTER */
+    footer {
+      background-color: #ebe6fb;
+      padding: 1rem 0;
+      color: #333;
+    }
+    .footer-content p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    .social-links {
+      margin-top: 1rem;
+    }
+    .social-links a {
+      text-decoration: none;
+      margin-right: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .social-links a.instagram,
+    .social-links a.linkedin {
+      color: #a892c6; /* cor do tema roxo claro */
+    }
+    .social-links a.facebook {
+      color: #d86c9a; /* cor rosa original */
+    }
+    .social-links a.github {
+      color: #333; /* neutro */
+    }
+    .social-links a:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
@@ -238,7 +271,7 @@ figure.image-full figcaption {
         <img src="img/roda.jpeg" alt="Grupo Os Protas" loading="lazy" />
         <img src="img/shrek.jpeg" alt="Com o Shrek no Beto Carrero" loading="lazy" />
         <img src="img/bc.jpeg" alt="Praia em BC" loading="lazy" />
-          </div>
+      </div>
       <button class="carousel-btn right" aria-label="Próxima imagem">›</button>
     </section>
   </main>
@@ -246,12 +279,18 @@ figure.image-full figcaption {
   <footer>
     <div class="footer-content" style="max-width: 900px; margin: auto; text-align: center;">
       <p>© 2024 Viajando com a Manu. Todos os direitos reservados.</p>
-      <div class="social-links" style="margin-top: 1rem;">
-        <a href="https://www.instagram.com/manu_viagens" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:#d86c9a; margin-right: 1rem; text-decoration:none;">
+      <div class="social-links">
+        <a href="https://www.instagram.com/manuurdc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram">
           Instagram
         </a>
-        <a href="https://www.facebook.com/manu.viagens" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color:#d86c9a; text-decoration:none;">
+        <a href="https://www.facebook.com/manu.viagens" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="facebook">
           Facebook
+        </a>
+        <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin">
+          LinkedIn
+        </a>
+        <a href="https://github.com/manuurdc" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="github">
+          GitHub
         </a>
       </div>
     </div>
@@ -295,14 +334,15 @@ figure.image-full figcaption {
       updateCarousel();
     };
 
-    // Menu toggle para mobile
+    // Toggle menu mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.getElementById('menu');
     menuToggle.addEventListener('click', () => {
-      if (menu.style.display === 'flex') {
+      if(menu.style.display === 'flex'){
         menu.style.display = 'none';
       } else {
         menu.style.display = 'flex';
+        menu.style.flexDirection = 'column';
       }
     });
   </script>
