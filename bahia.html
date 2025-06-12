@@ -1,98 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/geral.css" rel="stylesheet"/>
-    <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Relato da viagem da Manu para a Bahia com a família">
+  <title>Viagem para Bahia | Viajando com a Manu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f8f0fc;
+    color: #4b3b5c;
+  }
+  header {
+    background: linear-gradient(to right, #e6d0f7, #c9b2e5);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(75, 59, 92, 0.1);
+  }
+  .logo {
+    height: 60px;
+  }
+  .menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6f52a0;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #f3e9ff;
+    padding: 0.5rem;
+  }
+  .menu-item {
+    margin: 0.5rem 1rem;
+    text-decoration: none;
+    color: #7d5bbe;
+    font-weight: 600;
+  }
+  .menu-item.active {
+    border-bottom: 2px solid #7d5bbe;
+  }
+  main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #7d5bbe;
+    text-align: center;
+  }
+  p, figcaption {
+    line-height: 1.6;
+  }
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(75, 59, 92, 0.1);
+  }
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  .carousel-buttons button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #7d5bbe;
+  }
+  footer {
+    background: #e6d0f7;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .social-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #7d5bbe;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .social-links img {
+    width: 24px;
+    height: 24px;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
 
-    <title>Viajando com a Manu</title>
 </head>
 <body>
-    <div id="corpo">
-        <div id="topo">
-            <div class="logo-container">
-                <div class="logo"></div>
-                <img src="img/logo.png" alt="Viajando com a Manu" class="logo">
-            </div>
-            <div id="redes-sociais">
-             
-            </div>
-        </div>
-       
-        <div id="Menu">            
-            <div id="botao1">
-                <a href="index.html"><h3>Home</h3></a>
-            </div>
-            <div id="botao2">
-                <a href="europa.html"><h3>Viagem dos 15 anos</h3></a>
-            </div>
-            <div id="botao3">
-                <a href="bahia.html"><h3>Viagem para Bahia</h3></a>
-            </div>
-            <div id="botao4">
-                <a href="bc.html"><h3>Viagem para BC</h3></a>
-            </div>
-            <div id="botao5">
-                <a href="contato.html"><h3>Contatos</h3></a>
-            </div>
-        </div>
-       
-        <div id="conteudo">
-            <div id="esquerda">
-                <div class="image-container">
-                    <img src="img/farol.jpeg">
-                    <img src="img/man.jpeg">
-                    <img src="img/arvore.jpeg">
-                </div>
-               
-            </div>
-           
-            <div id="centro">
-                <h2>Minha viagem para Bahia com a família</h2>
-                <div class="intro-text">
-                    <p>De 14 a 26 de junho, vivi dias mágicos na Bahia, divididos entre a energia pulsante de Salvador e o paraíso tranquilo de Morro de São Paulo. Foi uma viagem repleta de encontros especiais, paisagens deslumbrantes e sabores que ainda lembro com saudade.</p>
-                    <p>Chegamos no dia 14 direto para a capital baiana, onde a mistura de história, música e alegria nos recebeu de braços abertos. Nosso roteiro incluiu o famoso Pelourinho, com suas ruas coloridas e casinhas coloniais que pareciam cenário de filme. E, por incrível que pareça, tivemos a sorte de presenciar um evento cultural com ninguém menos que Ivete Sangalo e Carlinhos Brown cantando juntos! Foi surreal ver aqueles ícones da música baiana ao vivo, contagiantes como só eles sabem ser.</p>
-                    <p>Mas a surpresa mais emocionante foi no dia do aniversário do meu pai. Sem ele esperar, encontramos Tia Márcia e sua família, que fizeram uma festa surpresa para celebrar com a gente. Foi um momento tão especial, cheio de abraços, risadas e aquela sensação gostosa de estar entre pessoas que amamos.</p>
-                    <p>E claro, não podia faltar a comida! Experimentei pratos incríveis, como acarajé quentinho da baiana, moqueca com aquele tempero perfeito e até lagosta com banana – uma combinação que soa estranha, mas é absurdamente deliciosa!</p>
-                    <p>No dia 21, pegamos uma lancha rumo a Morro de São Paulo, onde ficamos hospedados na Pousada Morena, literalmente na beira da praia. Acordar com o som do mar e tomar café da manhã com vista para as águas cristalinas foi um luxo.</p>
-                    <p>Fizemos um passeio de lancha pelas praias próximas, parando em piscinas naturais e mergulhando em águas tão azuis que pareciam de mentira. A Segunda Praia foi minha favorita – mar calmo, areia fofa e aquele clima relaxante que só Morro tem.</p>
-                    <p>E a gastronomia? Bebidas com cacau que eram puro êxtase, cocadas de todos os tipos (até com pimenta!) e frutos do mar fresquíssimos. Não tinha como resistir!</p>
-                </div>
-               
-            </div>
-            <div id="direita">
-                <div class="image-container">
-                    <img src="img/familia.jpeg">
-                    <img src="img/lancha.jpeg">
-                    <img src="img/celo.jpeg">
-                </div>
-   
-            </div>
-        </div>
-   
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Viajando com a Manu" class="logo">
     </div>
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://www.instagram.com/manuurdc/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/insta.png" alt="Instagram">
-                    <span>Instagram</span>
-                </a>
-                <a href="https://github.com/manuurdc" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/github.png" alt="GitHub">
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/linkedin.png" alt="LinkedIn">
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 Viajando com a Manu - Todos os direitos reservados
-            </div>
-        </div>
-    </footer>
-</div>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <nav id="menu">
+    <a href="index.html" class="menu-item">Home</a>
+    <a href="europa.html" class="menu-item">Viagem dos 15 anos</a>
+    <a href="bahia.html" class="menu-item active">Viagem para Bahia</a>
+    <a href="bc.html" class="menu-item">Viagem para BC</a>
+    <a href="contato.html" class="menu-item">Contatos</a>
+  </nav>
+
+  <main>
+    <h1>Minha viagem para Bahia com a família</h1>
+    <p>De 14 a 26 de junho, vivi dias mágicos na Bahia, entre Salvador e Morro de São Paulo. Uma viagem cheia de paisagens, encontros e sabores inesquecíveis.</p>
+
+    <div class="carousel">
+      <div class="carousel-images" id="carousel-images">
+        <img src="img/farol.jpeg" alt="Farol da Bahia">
+        <img src="img/man.jpeg" alt="Manu na Bahia">
+        <img src="img/arvore.jpeg" alt="Paisagem baiana">
+        <img src="img/familia.jpeg" alt="Família na Bahia">
+        <img src="img/lancha.jpeg" alt="Passeio de lancha">
+        <img src="img/celo.jpeg" alt="Praia na Bahia">
+        <img src="img/familia2.jpeg" alt="Família na praia">
+        <img src="img/comida.jpeg" alt="Comida baiana">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="moveSlide(-1)">&#10094;</button>
+        <button onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <section class="trip-text">
+      <p>Chegamos em Salvador e exploramos o Pelourinho, onde tivemos a sorte de ver Ivete Sangalo e Carlinhos Brown ao vivo! No aniversário do meu pai, uma festa surpresa com Tia Márcia e família nos emocionou.</p>
+      <p>Sabores como acarajé, moqueca e lagosta com banana marcaram a viagem. E Morro de São Paulo? Um sonho! Pousada na beira da praia, lancha, piscinas naturais e a inesquecível Segunda Praia.</p>
+      <p>Drinks com cacau, cocadas com pimenta e frutos do mar frescos tornaram tudo ainda mais especial.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/manuurdc/" target="_blank">
+        <img src="img/insta.png" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+      <a href="https://github.com/manuurdc" target="_blank">
+        <img src="img/github.png" alt="GitHub">
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank">
+        <img src="img/linkedin.png" alt="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+    </div>
+    <p>© 2025 Viajando com a Manu - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('#carousel-images img');
+    const total = images.length;
+
+    function moveSlide(step) {
+      currentIndex = (currentIndex + step + total) % total;
+      document.getElementById('carousel-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
 </body>
 </html>

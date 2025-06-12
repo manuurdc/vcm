@@ -1,98 +1,284 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/geral.css" rel="stylesheet"/>
-    <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Relato da viagem da Manu para Europa aos 15 anos" />
+  <title>Viagem dos 15 anos | Viajando com a Manu</title>
 
-    <title>Viajando com a Manu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+<style>
+  /* Reset & Base */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #fffafc;
+    color: #333;
+  }
+  header {
+    background: linear-gradient(to right, #ffdee9, #b5fffc);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .logo {
+    height: 60px;
+  }
+  .menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #ffeef5;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  .menu-item {
+    margin: 0.5rem 1rem;
+    text-decoration: none;
+    color: #c7a0e7;
+    font-weight: 600;
+  }
+  .menu-item.active {
+    border-bottom: 2px solid #c7a0e7;
+  }
+  main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #c7a0e7;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .trip-text p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  figure.image-full img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+  }
+  figure.image-full figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* CARROSSEL */
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .carousel-track img {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(199, 160, 231, 0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+  .carousel-btn:hover {
+    background-color: #c7a0e7;
+  }
+  .carousel-btn.left {
+    left: 10px;
+  }
+  .carousel-btn.right {
+    right: 10px;
+  }
+
+  footer {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .social-links {
+    margin-top: 1rem;
+  }
+  .social-links a {
+    color: #c7a0e7;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    .carousel-track img {
+      max-width: 200px;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav.show {
+      display: flex;
+    }
+  }
+</style>
+
 </head>
 <body>
-    <div id="corpo">
-        <div id="topo">
-            <div class="logo-container">
-                <div class="logo"></div>
-                <img src="img/logo.png" alt="Viajando com a Manu" class="logo">
-            </div>
-            <div id="redes-sociais">
-             
-            </div>
-        </div>
-       
-        <div id="Menu">            
-            <div id="botao1">
-                <a href="index.html"><h3>Home</h3></a>
-            </div>
-            <div id="botao2">
-                <a href="europa.html"><h3>Viagem dos 15 anos</h3></a>
-            </div>
-            <div id="botao3">
-                <a href="bahia.html"><h3>Viagem para Bahia</h3></a>
-            </div>
-            <div id="botao4">
-                <a href="bc.html"><h3>Viagem para BC</h3></a>
-            </div>
-            <div id="botao5">
-                <a href="contato.html"><h3>Contatos</h3></a>
-            </div>
-        </div>
-       
-        <div id="conteudo">
-            <div id="esquerda">
-                <div class="image-container">
-                    <img src="img/siria.jpeg">
-                    <img src="img/ca.jpeg">
-                    <img src="img/pique.jpeg">
-                </div>
-               
-            </div>
-           
-            <div id="centro">
-                <h2>Minha viagem dos 15 anos</h2>
-                <div class="intro-text">
-                    <p>Nunca vou esquecer o mês incrível que passei na Alemanha e a semana mágica em Paris. Tudo começou em Stralsund, uma cidadezinha charmosa no norte da Alemanha, onde me aventurei por ruas de paralelepípedos e casinhas coloridas. Mas o melhor mesmo foi conhecer três meninas maravilhosas em uma feirinha local: Nour, Sara e Lama. Elas eram cheias de energia, me mostraram lugares secretos da cidade e riamos muito juntas.</p>
-                    <p>Um final de semana em Berlim foi suficiente para me deixar apaixonada pela vibe da cidade – o Muro, a história pulsante, a mistura de culturas. Depois, ainda tive o prazer de relaxar na praia de Binz, com aquele mar gelado do Báltico, e passear por Schwerin, com seu castelo de contos de fadas.</p>
-                    <p>Na Alemanha, a comida foi uma aventura à parte: currywurst picante, döner kebab gigante (salvação depois de uma noite de festa) e até aquela famosa carne de porco crua com pão – confesso que precisei de coragem para experimentar!</p>
-                    <p>Mas uma das experiências mais engraçadas foi conhecer um time de meninos entre 8 e 12 anos que jogavam futsal. Quando descobriram que eu era brasileira, me bombardearam com perguntas sobre o Neymar: "Ele é seu amigo?", "Já jogou com ele?" – eu ria demais tentando explicar que o Brasil é grande, mas não tanto assim!</p>
-                    <p>Depois desse mês incrível, parti para Paris, e nossa… que cidade! Me senti em um filme caminhando pelo Louvre, vendo a Mona Lisa de perto (e a multidão ao redor dela), explorando os jardins imensos de Versalhes e subindo na Torre Eiffel, que brilhou magicamente à noite. O Arco do Triunfo me deixou sem fôlego, e a comida… ah, a comida! Provei escargot (não gostei), tartare (eu amei!) e crepes franceses em cada esquina.</p>
-                    <p>Foi uma viagem cheia de histórias, sabores, pessoas incríveis e momentos que vou guardar para sempre. Mal posso esperar pela próxima aventura!.</p>
-                 
-                </div>
-               
-            </div>
-            <div id="direita">
-                <div class="image-container">
-                    <img src="img/sis.jpeg">
-                    <img src="img/creme.jpeg">
-                    <img src="img/manu.jpeg">
-                </div>
-   
-            </div>
-        </div>
-   
+  <header id="topo">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Viajando com a Manu" class="logo" />
     </div>
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://www.instagram.com/manuurdc/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/insta.png" alt="Instagram">
-                    <span>Instagram</span>
-                </a>
-                <a href="https://github.com/manuurdc" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/github.png" alt="GitHub">
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/linkedin.png" alt="LinkedIn">
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 Viajando com a Manu - Todos os direitos reservados
-            </div>
-        </div>
-    </footer>
-</div>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <nav id="menu">
+    <a href="index.html" class="menu-item">Home</a>
+    <a href="europa.html" class="menu-item active">Viagem dos 15 anos</a>
+    <a href="bahia.html" class="menu-item">Viagem para Bahia</a>
+    <a href="bc.html" class="menu-item">Viagem para BC</a>
+    <a href="contato.html" class="menu-item">Contatos</a>
+  </nav>
+
+  <main id="conteudo">
+    <h1>Minha viagem dos 15 anos</h1>
+
+    <section class="trip-text">
+      <p>
+        Nunca vou esquecer o mês incrível que passei na Alemanha e a semana mágica em Paris. Tudo começou em Stralsund, uma cidadezinha charmosa no norte da Alemanha, onde me aventurei por ruas de paralelepípedos e casinhas coloridas. Mas o melhor mesmo foi conhecer três meninas maravilhosas em uma feirinha local: Nour, Sara e Lama. Elas eram cheias de energia, me mostraram lugares secretos da cidade e riamos muito juntas.
+      </p>
+
+      <figure class="image-full">
+        <img src="img/sis.jpeg" alt="Com a irmã na Europa" loading="lazy" />
+        <figcaption>Com minha irmã na Alemanha</figcaption>
+      </figure>
+
+      <p>
+        Um final de semana em Berlim foi suficiente para me deixar apaixonada pela vibe da cidade – o Muro, a história pulsante, a mistura de culturas. Depois, ainda tive o prazer de relaxar na praia de Binz, com aquele mar gelado do Báltico, e passear por Schwerin, com seu castelo de contos de fadas.
+      </p>
+
+      <p>
+        Na Alemanha, a comida foi uma aventura à parte: currywurst picante, döner kebab gigante (salvação depois de uma noite de festa) e até aquela famosa carne de porco crua com pão – confesso que precisei de coragem para experimentar!
+      </p>
+
+      <p>
+        Mas uma das experiências mais engraçadas foi conhecer um time de meninos entre 8 e 12 anos que jogavam futsal. Quando descobriram que eu era brasileira, me bombardearam com perguntas sobre o Neymar: "Ele é seu amigo?", "Já jogou com ele?" – eu ria demais tentando explicar que o Brasil é grande, mas não tanto assim!
+      </p>
+
+      <figure class="image-full">
+        <img src="img/creme.jpeg" alt="Comida na Europa" loading="lazy" />
+        <figcaption>Experimentando comidas típicas</figcaption>
+      </figure>
+
+      <p>
+        Depois desse mês incrível, parti para Paris, e nossa… que cidade! Me senti em um filme caminhando pelo Louvre, vendo a Mona Lisa de perto (e a multidão ao redor dela), explorando os jardins imensos de Versalhes e subindo na Torre Eiffel, que brilhou magicamente à noite. O Arco do Triunfo me deixou sem fôlego, e a comida… ah, a comida! Provei escargot (não gostei), tartare (eu amei!) e crepes franceses em cada esquina.
+      </p>
+
+      <p>
+        Foi uma viagem cheia de histórias, sabores, pessoas incríveis e momentos que vou guardar para sempre. Mal posso esperar pela próxima aventura!
+      </p>
+    </section>
+
+    <section class="carousel" aria-label="Galeria de fotos da viagem dos 15 anos">
+      <button class="carousel-btn left" aria-label="Imagem anterior">‹</button>
+      <div class="carousel-track">
+        <img src="img/siria.jpeg" alt="Amigas na Alemanha" loading="lazy" />
+        <img src="img/ca.jpeg" alt="Castelo na Alemanha" loading="lazy" />
+        <img src="img/pique.jpeg" alt="Diversão na Europa" loading="lazy" />
+        <img src="img/manu.jpeg" alt="Manu na Torre Eiffel" loading="lazy" />
+        <img src="img/berlin.jpeg" alt="Berlim" loading="lazy" />
+        <img src="img/paris.jpeg" alt="Paris" loading="lazy" />
+      </div>
+      <button class="carousel-btn right" aria-label="Próxima imagem">›</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Viajando com a Manu — Todos os direitos reservados</p>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram do Viajando com a Manu">Instagram</a> |
+      <a href="#" aria-label="Facebook do Viajando com a Manu">Facebook</a>
+    </div>
+  </footer>
+
+  <script>
+    // Menu toggle para mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Carousel simples
+    const track = document.querySelector('.carousel-track');
+    const btnPrev = document.querySelector('.carousel-btn.left');
+    const btnNext = document.querySelector('.carousel-btn.right');
+    let position = 0;
+
+    const slideWidth = 320; // largura aproximada da imagem + gap
+
+    btnPrev.addEventListener('click', () => {
+      position += slideWidth;
+      if (position > 0) position = -(track.scrollWidth - track.clientWidth);
+      track.style.transform = `translateX(${position}px)`;
+    });
+
+    btnNext.addEventListener('click', () => {
+      position -= slideWidth;
+      if (Math.abs(position) > track.scrollWidth - track.clientWidth)
+        position = 0;
+      track.style.transform = `translateX(${position}px)`;
+    });
+  </script>
 </body>
 </html>

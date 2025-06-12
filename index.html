@@ -1,118 +1,363 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/geral.css" rel="stylesheet"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"
-    <title>Viajando com a Manu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Página inicial do blog de viagens Viajando com a Manu" />
+  <title>Viajando com a Manu | Blog de Viagens</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Página inicial do blog de viagens Viajando com a Manu" />
+  <title>Viajando com a Manu | Blog de Viagens</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Reset & Base */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #fffafc;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #e9dcff, #d0c8ff);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .logo {
+      height: 60px;
+    }
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #f3edff;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .menu-item {
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: #c5a3ff;
+      font-weight: 600;
+    }
+    .menu-item.active {
+      border-bottom: 2px solid #c5a3ff;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #c5a3ff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .trip-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    figure.image-full img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+    figure.image-full figcaption {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* CARROSSEL */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .carousel-track img {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(197, 163, 255, 0.8);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+    .carousel-btn:hover {
+      background-color: #c5a3ff;
+    }
+    .carousel-btn.left {
+      left: 10px;
+    }
+    .carousel-btn.right {
+      right: 10px;
+    }
+
+    /* DESTAQUES */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .highlight-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    .highlight-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .highlight-content {
+      padding: 1.5rem;
+    }
+    .highlight-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: #c5a3ff;
+      margin-top: 0;
+    }
+    .highlight-content p {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    .highlight-link {
+      display: inline-block;
+      background: #c5a3ff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .highlight-link:hover {
+      background: #b183f2;
+    }
+
+    footer {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .social-links {
+      margin-top: 1rem;
+    }
+    .social-links a {
+      color: #c5a3ff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .carousel-track img {
+        max-width: 200px;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav.show {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="corpo">
-        <div id="topo">
-            <div class="logo-container">
-                <div class="logo"></div>
-                <img src="img/logo.png" alt="Viajando com a Manu" class="logo">
-            </div>
-            <div id="redes-sociais">
-             
-            </div>
-        </div>
-       
-        <div id="Menu">            
-            <div id="botao1">
-                <a href="index.html"><h3>Home</h3></a>
-            </div>
-            <div id="botao2">
-                <a href="europa.html"><h3>Viagem dos 15 anos</h3></a>
-            </div>
-            <div id="botao3">
-                <a href="bahia.html"><h3>Viagem para Bahia</h3></a>
-            </div>
-            <div id="botao4">
-                <a href="bc.html"><h3>Viagem para BC</h3></a>
-            </div>
-            <div id="botao5">
-                <a href="contato.html"><h3>Contatos</h3></a>
-            </div>
-        </div>
-       
-        <div id="conteudo">
-            <div id="esquerda">
-                <div class="image-container">
-                    <img src="img/beto.jpeg">
-                    <img src="img/eu.jpeg">
-                    <img src="img/torre.jpeg">
-                </div>
-               
-            </div>
-           
-            <div id="centro">
-                <h2>Minhas Aventuras pelo Mundo</h2>
-                <div class="intro-text">
-                    <p>Olá, eu sou a Manu! Criadora deste espaço onde compartilho minhas paixões por viagens, culturas diferentes e momentos inesquecíveis. Desde pequena sempre tive o sonho de conhecer o mundo, e aqui registro cada passo dessa jornada.</p>
-                   
-                    <p>Este blog nasceu para inspirar outras pessoas a explorarem novos lugares, mesmo que seja na cidade vizinha. Acredito que cada viagem, seja grande ou pequena, nos transforma de alguma forma.</p>
-                </div>
-               
-                <div class="destaques">
-                    <h3>✨ Destaques das Minhas Viagens ✨</h3>
-                    <div class="viagem-destaque">
-                        <a href="europa.html"><h4>Meus Quinze Anos na Europa</h4></a>
-                        <p>Uma experiência transformadora onde pude viver como uma local na Alemanha por um mês inteiro, seguido por uma semana mágica em Paris. Desde aprender algumas palavras em alemão até me perder nas charmosas ruas de Montmartre - cada dia foi uma nova descoberta!</p>
-                    </div>
-                   
-                    <div class="viagem-destaque">
-                        <a href="bahia.html"><h4>Família e Praias na Bahia</h4></a>
-                        <p>Nada melhor do que unir família e praias paradisíacas! Nesta viagem exploramos a riqueza cultural de Salvador, com seu Pelourinho cheio de história, e depois relaxamos nas águas cristalinas de Morro de São Paulo. Celebrar o Natal com direito a praia foi inesquecível!</p>
-                    </div>
-                   
-                    <div class="viagem-destaque">
-                        <a href="bc.html"><h4>Aventura em Balneário Camboriú com a Escola</h4></a>
-                        <p>Minha primeira viagem sem a família, mas cercada de amigos que se tornaram como uma. Conhecemos os pontos turísticos da cidade, nos divertimos muito na praia e criamos o grupo "Os Prota" que até hoje mantemos. Uma lição de independência e amizade!</p>
-                    </div>
-                </div>
-               
-                <div class="convite">
-                    <h3>Junte-se a Mim Nessa Jornada!</h3>
-                    <p>Seja você um viajante experiente ou alguém que ainda está planejando a primeira aventura, espero que encontre aqui inspiração e dicas úteis. Acompanhe cada postagem e deixe seus comentários - adoraria saber suas experiências também!</p>
-                    <p class="assinatura">Com carinho,<br>Manu 🌍💜</p>
-                </div>
-            </div>
-            <div id="direita">
-                <div class="image-container">
-                    <img src="img/familia.jpeg">
-                    <img src="img/berlin.jpeg">
-                    <img src="img/protas.jpeg">
-                </div>
-   
-            </div>
-        </div>
-   
+  <!-- (Corpo da página permanece igual, sem alteração estrutural) -->
+
+</head>
+<body>
+  <header id="topo">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Viajando com a Manu" class="logo" />
     </div>
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://www.instagram.com/manuurdc/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/insta.png" alt="Instagram">
-                    <span>Instagram</span>
-                </a>
-                <a href="https://github.com/manuurdc" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/github.png" alt="GitHub">
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/linkedin.png" alt="LinkedIn">
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 Viajando com a Manu - Todos os direitos reservados
-            </div>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <nav id="menu">
+    <a href="index.html" class="menu-item active">Home</a>
+    <a href="europa.html" class="menu-item">Viagem dos 15 anos</a>
+    <a href="bahia.html" class="menu-item">Viagem para Bahia</a>
+    <a href="bc.html" class="menu-item">Viagem para BC</a>
+    <a href="contato.html" class="menu-item">Contatos</a>
+  </nav>
+
+  <main id="conteudo">
+    <h1>Bem-vindo ao Viajando com a Manu!</h1>
+
+    <section class="trip-text">
+      <p>
+        Olá viajantes! Eu sou a Manu e aqui compartilho minhas aventuras pelo mundo. 
+        Desde a emocionante viagem dos meus 15 anos pela Europa até os passeios mais 
+        recentes pela Bahia e Santa Catarina, cada experiência é uma história para contar.
+      </p>
+
+      <figure class="image-full">
+        <img src="img/eu.jpeg" alt="Manu em uma de suas viagens" loading="lazy" />
+        <figcaption>Explorando novos lugares e culturas</figcaption>
+      </figure>
+
+      <p>
+        Meu objetivo com este blog é inspirar outros jovens a descobrirem o mundo, 
+        mostrar que viajar é possível em qualquer idade e compartilhar dicas valiosas 
+        que aprendi em cada destino. Aqui você encontrará relatos honestos, fotos 
+        incríveis e muitas histórias divertidas das minhas experiências.
+      </p>
+    </section>
+
+    <section class="carousel" aria-label="Destaques de viagens">
+      <button class="carousel-btn left" aria-label="Imagem anterior">‹</button>
+      <div class="carousel-track">
+        <img src="img/manu.jpeg" alt="Viagem pela Europa" loading="lazy" />
+        <img src="img/man.jpeg" alt="Praias da Bahia" loading="lazy" />
+        <img src="img/bc.jpeg" alt="Balneário Camboriú" loading="lazy" />
+        <img src="img/creme.jpeg" alt="Comidas típicas" loading="lazy" />
+      </div>
+      <button class="carousel-btn right" aria-label="Próxima imagem">›</button>
+    </section>
+
+    <section class="highlights">
+      <h2 style="grid-column: 1 / -1; text-align: center;">Minhas Viagens</h2>
+      
+      <article class="highlight-card">
+        <img src="img/torre.jpeg" alt="Viagem dos 15 anos" loading="lazy" />
+        <div class="highlight-content">
+          <h2>Europa aos 15</h2>
+          <p>Um mês incrível na Alemanha e uma semana mágica em Paris. Conheci amigos de várias nacionalidades e vivi experiências inesquecíveis.</p>
+          <a href="europa.html" class="highlight-link">Ver relato completo</a>
         </div>
-    </footer>
-</div>
+      </article>
 
+      <article class="highlight-card">
+        <img src="img/familia.jpeg" alt="Viagem para Bahia" loading="lazy" />
+        <div class="highlight-content">
+          <h2>Explorando a Bahia</h2>
+          <p>Das praias paradisíacas de Morro de São Paulo à cultura rica de Salvador. Uma viagem cheia de sol, história e alegria.</p>
+          <a href="bahia.html" class="highlight-link">Ver relato completo</a>
+        </div>
+      </article>
 
+      <article class="highlight-card">
+        <img src="img/protas.jpeg" alt="Viagem para Balneário Camboriú" loading="lazy" />
+        <div class="highlight-content">
+          <h2>Férias em BC</h2>
+          <p>Arranha-céus impressionantes, praias movimentadas e muita diversão. Minha experiência na capital catarinense do verão.</p>
+          <a href="bc.html" class="highlight-link">Ver relato completo</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Viajando com a Manu — Todos os direitos reservados</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/manuurdc/" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://github.com/manuurdc" target="_blank" rel="noopener noreferrer">GitHub</a> |
+      <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    // Menu toggle para mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Carousel simples
+    const track = document.querySelector('.carousel-track');
+    const btnPrev = document.querySelector('.carousel-btn.left');
+    const btnNext = document.querySelector('.carousel-btn.right');
+    let position = 0;
+
+    const slideWidth = 320; // largura aproximada da imagem + gap
+
+    btnPrev.addEventListener('click', () => {
+      position += slideWidth;
+      if (position > 0) position = -(track.scrollWidth - track.clientWidth);
+      track.style.transform = `translateX(${position}px)`;
+    });
+
+    btnNext.addEventListener('click', () => {
+      position -= slideWidth;
+      if (Math.abs(position) > track.scrollWidth - track.clientWidth)
+        position = 0;
+      track.style.transform = `translateX(${position}px)`;
+    });
+  </script>
 </body>
 </html>

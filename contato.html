@@ -1,266 +1,421 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/geral.css" rel="stylesheet"/>
-    <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viajando com a Manu - Contato</title>
+  <style>
+:root {
+  --roxo-claro: #b185db;
+  --roxo-hover: #a76bdb;
+  --azul-claro: #add8e6;
+  --cinza: #f9f9f9;
+  --cinza-escuro: #ccc;
+  --branco: #ffffff;
+}
 
-    <title>Viajando com a Manu</title>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #fffafc;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #f3e7fe, #e0c7fa);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #f7eefd;
+  padding: 0.5rem;
+}
+
+nav a.menu-item {
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--roxo-claro);
+  font-weight: 600;
+}
+
+nav a.menu-item.active {
+  border-bottom: 2px solid var(--roxo-claro);
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--roxo-claro);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.trip-text p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+figure.image-full img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+figure.image-full figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Carrossel */
+.carousel {
+  max-width: 800px;
+  margin: 30px auto;
+  position: relative;
+  background: var(--branco);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 8px 8px 0 0;
+  pointer-events: none;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-controls button {
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-controls button:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.carousel-indicators {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #eee;
+}
+
+.carousel-indicators button {
+  border: none;
+  background-color: #bbb;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-indicators button.active {
+  background-color: var(--roxo-claro);
+}
+
+/* Formulário */
+.form-container {
+  max-width: 600px;
+  background: var(--branco);
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.form-container h2 {
+  color: var(--roxo-claro);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: var(--roxo-claro);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: var(--roxo-hover);
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+footer {
+  background-color: var(--roxo-claro);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-links img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+  </style>
 </head>
 <body>
-    <div id="corpo">
-        <div id="topo">
-            <div class="logo-container">
-                <div class="logo"></div>
-                <img src="img/logo.png" alt="Viajando com a Manu" class="logo">
-            </div>
-            <div id="redes-sociais">
-             
-            </div>
+  <!-- ... restante do conteúdo HTML igual ... -->
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Viajando com a Manu" class="logo" />
+  </header>
+
+  <nav>
+    <a href="index.html" class="menu-item">Home</a>
+    <a href="europa.html" class="menu-item">Viagem dos 15 anos</a>
+    <a href="bahia.html" class="menu-item">Viagem para Bahia</a>
+    <a href="bc.html" class="menu-item">Viagem para BC</a>
+    <a href="contato.html" class="menu-item active">Contatos</a>
+  </nav>
+
+  <main>
+    <!-- Carrossel -->
+    <section class="carousel" aria-label="Galeria de fotos da Manu">
+      <div class="carousel-images">
+        <img src="1.jpeg" alt="Foto da viagem 1" />
+        <img src="2.jpeg" alt="Foto da viagem 2" />
+        <img src="3.jpeg" alt="Foto da viagem 3" />
+        <img src="4.jpeg" alt="Foto da viagem 4" />
+        <img src="5.jpeg" alt="Foto da viagem 5" />
+        <img src="6.jpeg" alt="Foto da viagem 6" />
+      </div>
+      <div class="carousel-controls">
+        <button class="prev" aria-label="Imagem anterior">&#10094;</button>
+        <button class="next" aria-label="Próxima imagem">&#10095;</button>
+      </div>
+      <div class="carousel-indicators">
+        <button data-slide="0" class="active" aria-label="Ir para imagem 1"></button>
+        <button data-slide="1" aria-label="Ir para imagem 2"></button>
+        <button data-slide="2" aria-label="Ir para imagem 3"></button>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section class="form-container">
+      <h2>Fale Comigo</h2>
+      <p>Quer compartilhar experiências ou tem dúvidas sobre minhas viagens? Entre em contato!</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required />
+          <span id="nome-error" class="error-message"></span>
         </div>
-       
-        <div id="Menu">            
-            <div id="botao1">
-                <a href="index.html"><h3>Home</h3></a>
-            </div>
-            <div id="botao2">
-                <a href="europa.html"><h3>Viagem dos 15 anos</h3></a>
-            </div>
-            <div id="botao3">
-                <a href="bahia.html"><h3>Viagem para Bahia</h3></a>
-            </div>
-            <div id="botao4">
-                <a href="bc.html"><h3>Viagem para BC</h3></a>
-            </div>
-            <div id="botao5">
-                <a href="contato.html"><h3>Contatos</h3></a>
-            </div>
+
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required />
+          <span id="email-error" class="error-message"></span>
         </div>
-       
-        <div id="conteudo">
-            <div id="esquerda">
-                <div class="image-container">
-                    
-                </div>
-            </div>
-           
-            <div id="centro">
-    <h2>Fale Comigo</h2>
-    <p>Quer compartilhar experiências ou tem dúvidas sobre minhas viagens? Entre em contato!</p>
-    
-    <div class="form-container">
-        <form id="contactForm" class="contact-form">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <span id="nome-error" class="error-message"></span>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <span id="email-error" class="error-message"></span>
-            </div>
-            
-            <div class="form-group">
-                <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone">
-                <span id="telefone-error" class="error-message"></span>
-            </div>
-            
-            <div class="form-group">
-                <label for="assunto">Assunto:</label>
-                <select id="assunto" name="assunto">
-                    <option value="viagem">Dicas de viagem</option>
-                    <option value="duvida">Dúvida</option>
-                    <option value="sugestao">Sugestão</option>
-                    <option value="outro">Outro</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                <span id="mensagem-error" class="error-message"></span>
-            </div>
-            
-            <button type="submit" class="submit-btn">Enviar Mensagem</button>
-        </form>
+
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" name="telefone" />
+          <span id="telefone-error" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="assunto">Assunto:</label>
+          <select id="assunto" name="assunto">
+            <option value="viagem">Dicas de viagem</option>
+            <option value="duvida">Dúvida</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          <span id="mensagem-error" class="error-message"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/manuurdc/" target="_blank">
+        <img src="./img/insta.png" alt="Instagram" /> Instagram
+      </a>
+      <a href="https://github.com/manuurdc" target="_blank">
+        <img src="./img/github.png" alt="GitHub" /> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank">
+        <img src="./img/linkedin.png" alt="LinkedIn" /> LinkedIn
+      </a>
     </div>
-</div>
+    <p>© 2025 Viajando com a Manu - Todos os direitos reservados</p>
+  </footer>
 
-<style>
-    .error-message {
-        color: red;
-        font-size: 0.8em;
-        display: block;
-        margin-top: 5px;
-    }
-    
-    .error {
-        border: 1px solid red;
-    }
-    
-    .success {
-        border: 1px solid green;
-    }
-</style>
+  <script>
+    // Validação do formulário
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const telefone = document.getElementById('telefone');
+      const mensagem = document.getElementById('mensagem');
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('contactForm');
-        const nomeField = document.getElementById('nome');
-        const nomeError = document.getElementById('nome-error');
-        const emailField = document.getElementById('email');
-        const emailError = document.getElementById('email-error');
-        const telefoneField = document.getElementById('telefone');
-        const telefoneError = document.getElementById('telefone-error');
-        const mensagemField = document.getElementById('mensagem');
-        const mensagemError = document.getElementById('mensagem-error');
+      const nomeError = document.getElementById('nome-error');
+      const emailError = document.getElementById('email-error');
+      const telefoneError = document.getElementById('telefone-error');
+      const mensagemError = document.getElementById('mensagem-error');
 
+      function validateField(field, errorElement, validationFn, errorMsg) {
+        const valid = validationFn(field.value.trim());
+        errorElement.textContent = valid ? '' : errorMsg;
+        return valid;
+      }
 
-        nomeField.addEventListener('blur', validateNome);
-        function validateNome() {
-            const nome = nomeField.value.trim();
-            
-            if (nome === '') {
-                nomeError.textContent = 'Por favor, insira seu nome.';
-                nomeField.classList.add('error');
-                nomeField.classList.remove('success');
-                return false;
-            } else if (nome.length < 3) {
-                nomeError.textContent = 'O nome deve ter pelo menos 3 caracteres.';
-                nomeField.classList.add('error');
-                nomeField.classList.remove('success');
-                return false;
-            } else {
-                nomeError.textContent = '';
-                nomeField.classList.remove('error');
-                nomeField.classList.add('success');
-                return true;
-            }
+      function validateNome(nome) {
+        return nome.length >= 3;
+      }
+
+      function validateEmail(email) {
+        const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+        return regex.test(email);
+      }
+
+      function validateTelefone(tel) {
+        return tel === '' || /^\(?\d{2}\)?[\s-]?\d{4,5}[\s-]?\d{4}$/.test(tel);
+      }
+
+      function validateMensagem(msg) {
+        return msg.length >= 10;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nomeVal = validateField(nome, nomeError, validateNome, 'Nome com pelo menos 3 letras');
+        const emailVal = validateField(email, emailError, validateEmail, 'E-mail inválido');
+        const telVal = validateField(telefone, telefoneError, validateTelefone, 'Telefone inválido');
+        const msgVal = validateField(mensagem, mensagemError, validateMensagem, 'Mínimo 10 caracteres');
+
+        if (nomeVal && emailVal && telVal && msgVal) {
+          alert('Mensagem enviada com sucesso!');
+          form.reset();
+        } else {
+          alert('Por favor, corrija os erros antes de enviar.');
         }
+      });
 
-        
-        emailField.addEventListener('blur', validateEmail);
-        function validateEmail() {
-            const email = emailField.value.trim();
-            const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w{2,4}$/;
-            
-            if (email === '') {
-                emailError.textContent = 'Por favor, insira seu e-mail.';
-                emailField.classList.add('error');
-                emailField.classList.remove('success');
-                return false;
-            } else if (!emailRegex.test(email)) {
-                emailError.textContent = 'Por favor, insira um e-mail válido.';
-                emailField.classList.add('error');
-                emailField.classList.remove('success');
-                return false;
-            } else {
-                emailError.textContent = '';
-                emailField.classList.remove('error');
-                emailField.classList.add('success');
-                return true;
-            }
-        }
+      // Carrossel
+      const imagesContainer = document.querySelector('.carousel-images');
+      const images = document.querySelectorAll('.carousel-images img');
+      const prevBtn = document.querySelector('.carousel .prev');
+      const nextBtn = document.querySelector('.carousel .next');
+      const indicators = document.querySelectorAll('.carousel-indicators button');
 
-        telefoneField.addEventListener('blur', validateTelefone);
-        function validateTelefone() {
-            const telefone = telefoneField.value.trim();
-            const telefoneRegex = /^\(?\d{2}\)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
-            
-            
-            if (telefone !== '' && !telefoneRegex.test(telefone)) {
-                telefoneError.textContent = 'Por favor, insira um telefone válido (DD) 9XXXX-XXXX ou (DD) XXXX-XXXX';
-                telefoneField.classList.add('error');
-                telefoneField.classList.remove('success');
-                return false;
-            } else {
-                telefoneError.textContent = '';
-                telefoneField.classList.remove('error');
-                telefoneField.classList.add('success');
-                return true;
-            }
-        }
+      let currentIndex = 0;
 
-        
-        mensagemField.addEventListener('blur', validateMensagem);
-        function validateMensagem() {
-            const mensagem = mensagemField.value.trim();
-            
-            if (mensagem === '') {
-                mensagemError.textContent = 'Por favor, insira sua mensagem.';
-                mensagemField.classList.add('error');
-                mensagemField.classList.remove('success');
-                return false;
-            } else if (mensagem.length < 10) {
-                mensagemError.textContent = 'A mensagem deve ter pelo menos 10 caracteres.';
-                mensagemField.classList.add('error');
-                mensagemField.classList.remove('success');
-                return false;
-            } else {
-                mensagemError.textContent = '';
-                mensagemField.classList.remove('error');
-                mensagemField.classList.add('success');
-                return true;
-            }
-        }
+      function updateCarousel() {
+        imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((btn, i) => btn.classList.toggle('active', i === currentIndex));
+      }
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const isNomeValid = validateNome();
-            const isEmailValid = validateEmail();
-            const isTelefoneValid = validateTelefone();
-            const isMensagemValid = validateMensagem();
-            
-            if (isNomeValid && isEmailValid && isTelefoneValid && isMensagemValid) {
-                
-                alert('Formulário enviado com sucesso!');
-                form.reset();
-                
-              
-                const inputs = form.querySelectorAll('input, textarea');
-                inputs.forEach(input => {
-                    input.classList.remove('success');
-                });
-            } else {
-                alert('Por favor, corrija os erros no formulário antes de enviar.');
-            }
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+      });
+
+      indicators.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
         });
+      });
+
+      updateCarousel();
     });
-</script>
-           
-            <div id="direita">
-                <div class="image-container">
-                    
-                </div>
-            </div>
-        </div>
-       
-        <footer>
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/manuurdc/" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/insta.png" alt="Instagram">
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://github.com/manuurdc" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/github.png" alt="GitHub">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/manuella-de-castro-47463b347/" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/linkedin.png" alt="LinkedIn">
-                        <span>LinkedIn</span>
-                    </a>
-                </div>
-                <div class="footer-copyright">
-                    © 2025 Viajando com a Manu - Todos os direitos reservados
-                </div>
-            </div>
-        </footer>
-    </div>
+  </script>
 </body>
 </html>
