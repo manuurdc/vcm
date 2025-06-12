@@ -232,6 +232,32 @@ footer {
   height: 20px;
   margin-right: 5px;
 }
+.topico-estilizado {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.topico-estilizado h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.topico-estilizado h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: #f8b500; /* Cor da linha inferior */
+  margin: 0 auto;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
   </style>
 </head>
 <body>
