@@ -28,3 +28,17 @@ header {
   cursor: pointer;
   color: #6f52a0;
 }
+
+.logo-container {
+  margin-left: 0;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 1rem;
+}
